@@ -70,12 +70,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <ImageButton
         android:id="@+id/delete_btn"
         style="@style/calculatorBtn.gray"
         android:layout_width="76dp"
         android:layout_height="76dp"
-        android:text="-"
+        android:contentDescription="@string/back_button"
+        android:src="@drawable/arrow_left_02"
         app:layout_constraintEnd_toStartOf="@+id/percentage_btn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/ac_btn"
