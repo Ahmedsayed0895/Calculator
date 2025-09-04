@@ -2,6 +2,7 @@ package com.xml.calculator
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.xml.calculator.databinding.ActivityMainBinding
@@ -71,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.equalBtn.setOnClickListener {
-
+            try {
                 val expression = currentExpression
                 val result = evaluateExpression(expression)
 
@@ -85,7 +86,12 @@ class MainActivity : AppCompatActivity() {
 
                 binding.resultText.text = displayResult
                 currentExpression = displayResult
+            } catch (e: Exception) {
+                binding.resultText.text = "0"
+                Toast.makeText(this, "Invalid expression", Toast.LENGTH_SHORT).show()
+            }
         }
+
 
     }
     private fun evaluateExpression(expression: String): Double {
