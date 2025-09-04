@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
                 binding.resultText.text = "0"
                 return@setOnClickListener
             }
-            if (binding.resultText.text.toString().last() == ' ')
-            binding.resultText.text = binding.resultText.text.dropLast(2)
+            if (binding.resultText.text.toString().last() == ' '){
+            binding.resultText.text = binding.resultText.text.dropLast(2)}
             binding.resultText.text = binding.resultText.text.dropLast(1)
         }
         binding.plusBtn.setOnClickListener {
